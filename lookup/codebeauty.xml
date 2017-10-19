@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Sync report="Sync - Freeman_Role">
+	<data>
+		<row disposition="INSERT">
+			<EntryTable>Session</EntryTable>
+			<Entryid>11045</Entryid>
+			<Key_RoleID>670326</Key_RoleID>
+			<Order>1</Order>
+			<PersonID>181840</PersonID>
+			<Presenter></Presenter>
+			<Role>Chair</Role>
+		</row>
+		<row disposition="INSERT">
+			<EntryTable>Session</EntryTable>
+			<Entryid>11046</Entryid>
+			<Key_RoleID>670327</Key_RoleID>
+			<Order>1</Order>
+			<PersonID>198574</PersonID>
+			<Presenter></Presenter>
+			<Role>Chair</Role>
+		</row>
+		<row disposition="INSERT">
+			<EntryTable>Session</EntryTable>
+			<Entryid>11047</Entryid>
+			<Key_RoleID>670328</Key_RoleID>
+			<Order>1</Order>
+			<PersonID>194200</PersonID>
+			<Presenter></Presenter>
+			<Role>Chair</Role>
+		</row>
+		<row disposition="INSERT">
+			<EntryTable>Session</EntryTable>
+			<Entryid>11048</Entryid>
+			<Key_RoleID>670329</Key_RoleID>
+			<Order>1</Order>
+			<PersonID>500745</PersonID>
+			<Presenter></Presenter>
+			<Role>Chair</Role>
+		</row>
+		<row disposition="INSERT">
+			<EntryTable>Session</EntryTable>
+			<Entryid>11049</Entryid>
+			<Key_RoleID>670330</Key_RoleID>
+			<Order>1</Order>
+			<PersonID>32048</PersonID>
+			<Presenter></Presenter>
+			<Role>Chair</Role>
+		</row>
+		<row disposition="INSERT">
+			<EntryTable>Session</EntryTable>
+			<Entryid>11050</Entryid>
+			<Key_RoleID>670331</Key_RoleID>
+			<Order>1</Order>
+			<PersonID>554684</PersonID>
+			<Presenter></Presenter>
+			<Role>Chair</Role>
+		</row>
+	</data>
+	<snapshotid>a3e536a03973dbab39cfc1df08b23682</snapshotid>
+</Sync>
