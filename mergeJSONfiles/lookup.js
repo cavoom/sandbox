@@ -1,4 +1,5 @@
 // This script ADDS the PERSON ID to the SESSION Record
+// and then ADDS the names to the record!
 
 var sessions = require('./codebeautify_SESSIONS.js');
 var roles = require('./codebeautify_ROLE.js');
@@ -21,7 +22,6 @@ attachPersonIdToSession((response)=>{
     });
 
 });
-
 
 // **********************************************************************************
 function attachPersonIdToSession(callback){
@@ -81,8 +81,10 @@ callback(masterFile);
 
 }
 
-
 // *************************************************************************************
+
+// I converted the above XMLs to JSON with this service
+// https://codebeautify.org/xmltojson
 
 //https://ash.confex.com/ash/2017/sync.cgi/Freeman_Session_Listing.xml
 //https://ash.confex.com/ash/2017/sync.cgi/Freeman_Paper_Listing.xml
@@ -90,7 +92,3 @@ callback(masterFile);
 //https://ash.confex.com/ash/2017/sync.cgi/Freeman_Role.xml
 //https://ash.confex.com/ash/2017/sync.cgi/Freeman_RoleAddress.xml
 //https://ash.confex.com/ash/2017/sync.cgi/Freeman_COI_PersonBased.xml
-// I converted the above XMLs to JSON with this service
-// https://codebeautify.org/xmltojson
-
-
