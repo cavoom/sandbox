@@ -2,7 +2,7 @@
 
 //STOPPED HERE
 // THEN GO TO THE ALEXA SIDE AND SEE IF WE CAN SEARCH BY KEYWORDS
-// AND FIND THOSE THAT DON'T HAVE IDENTIFIED KEYWORDS (SHOULD WORK)
+// FIND A SESSION ABOUT ... 
 
 var allData = require('./ashData.json');
 // console.log(allData.length); // 591 records
@@ -10,7 +10,7 @@ var allData = require('./ashData.json');
 var i = 0; // counter for while loop
 var testSpeaker = "Seth Corey";
 var testSession = "Congenital and Acquired Neutropenia";
-var theKeyword = "Boned";
+var theKeyword = "Boner";
 var timeNow = new Date();
 //var tempArray = [];
 
@@ -22,8 +22,8 @@ taxonomy((resultingStuff)=>{
     removem(resultingStuff, (uniques)=>{
         console.log('I found ', uniques.length,' items that are unique.');
 
-        playback(uniques, (message)=>{
-            console.log(message);
+        playback(uniques, (nextStatement)=>{
+            console.log(nextStatement);
         })
     
         })
@@ -59,6 +59,7 @@ callback(searchResults);
 // RETURN UNIQUE OBJECT ARRAY
 function removem(resultz, callback){
     var uniques = [resultz[0]];
+    var message = '';
     if(resultz.length > 1){
     var numberRecords = resultz.length;
     //console.log('i am in remove em ', numberRecords);
@@ -86,6 +87,8 @@ function removem(resultz, callback){
 
 // Playback the results
 function playback(uniques,callback){
+    var nextStatement = "";
+    var theGoods = uniques;
     //var list = "the stuff is " + uniques[0].sessionId + "," + uniques[1].sessionId + "," + uniques[2].sessionId;
     if(uniques.length >1){
         
@@ -94,15 +97,20 @@ function playback(uniques,callback){
         uniques.shift();
         //console.log('the next one is ' + uniques[0].sessionTitle);
         //console.log('there are now ', uniques.length, 'records.');
-    } else {
-        console.log('I found 1 session and it is ',uniques[0].sessionTitle);
+        nextStatement = 'there are '+uniques.length+' other sessions at this time. Would you like to hear them?';
+    } else if(uniques.length == 1){
+        console.log('I found 1 argh session and it is ',uniques[0].sessionTitle);
         //console.log('there are now ', uniques.length, 'records.');
         uniques.shift();
-        //console.log('there are now: ', uniques.length);
+        console.log('there are now: ', uniques.length);
+        nextStatement = 'there are no other sessions at this time. Want to hear about it?';
    
+    } else if(uniqueslength == 0){
+        nextStatement = 'there are no other sessions at this time.';
     }
 
-    callback('all done');
+    //console.log('NEXT statement is: ', nextStatement);
+    callback(nextStatement);
     // send it to session.attributes to save the remaining items!
 }
 
