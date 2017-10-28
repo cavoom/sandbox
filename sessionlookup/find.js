@@ -34,7 +34,7 @@ taxonomy((resultingStuff)=>{
 
 // FIND A SESSION WITH A TAXONOMY KEYWORD
 function taxonomy(callback){
-    i-0;
+    i=0;
     var searchResults = [];
     while (i < allData.length){
         var title = allData[i].sessionTitle;
