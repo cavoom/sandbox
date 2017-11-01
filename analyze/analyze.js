@@ -1,3 +1,8 @@
+// This program grabs the titles from a JSON file
+// Sorts Alpha order
+// Removes dupes
+
+
 var sessions = require('./ashData103017.json');
 var data = sessions.Sync.data.row;
 var theSessions = [];
@@ -10,22 +15,22 @@ var i = 0;
 console.log(data.length+ ' records to check out');
 
 
+sortem();
+// getTitles((result)=>{
+//     //console.log(result);
+//     console.log(result.length+ ' records to deDupe');
 
-getTitles((result)=>{
-    //console.log(result);
-    console.log(result.length+ ' records to deDupe');
-
-    // NEXT SORT BY TITLE
-    // THEN DEDUPE
+//     // NEXT SORT BY TITLE
+//     // THEN DEDUPE
     
-//     // //REMOVE DUPES
-//     // removem(result, (noDupes)=>{
-//     //     console.log('I have ',noDupes.length, ' unique records.')
+// //     // //REMOVE DUPES
+// //     // removem(result, (noDupes)=>{
+// //     //     console.log('I have ',noDupes.length, ' unique records.')
 
-//     //     // Now call a function to save the results into a file
-//     // })
+// //     //     // Now call a function to save the results into a file
+// //     // })
 
-});
+// });
 
 
 // Function to get Titles
@@ -58,6 +63,32 @@ function removem(resultz, callback){
     }
 
     callback(uniques);
+}
+
+function sortem (){
+
+    var toSort = [{
+
+        name:"lynley",
+        age: 24,
+        sex: "F"
+    },{
+        name: "michele",
+        age: 27,
+        sex: "F"
+    },
+    {
+        name: "hyunnJoo",
+        age: 29,
+        sex: "F"
+    }];
+
+    toSort.sort(name);
+    console.log(toSort);
+
+
+//callback(sorted)
+
 }
 
 

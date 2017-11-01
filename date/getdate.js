@@ -1,3 +1,10 @@
+// This program finds sessions that occur between two dates / times
+// We convert strings to Dates
+// We compare dates with current date / time
+// And other date functions can be found below
+
+
+
 // CONVERT DATE STRING TO ZULU DATETIME
 let theDate="2017-10-25";
 let theStartTime = "2:00:00 PM";

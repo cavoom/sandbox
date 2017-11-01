@@ -1,3 +1,7 @@
+// this program sorts an array
+// different functions for alpha, number and date sorting
+
+
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 var date1 = '2017-12-13T01:00Z';
 var date2 = '2017-12-12T09:00Z';
