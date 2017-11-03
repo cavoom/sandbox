@@ -6,10 +6,10 @@
 
 var removeWords =  require('remove-words');
 var jsonfile = require('jsonfile');
-var everything = require('./ashData.json');
+var everything = require('../analyze/session_updated.json');
 var stringify = require('csv-stringify');
 
-var titles = everything.Sync.data.row;
+var titles = everything;
 var title = [];
 var theList = [];
 var x = 0;
@@ -35,19 +35,22 @@ loopThru((result)=>{
              
 })
 
-// Get each of the titles and remove the common words
+// LOOP THROUGH: Get each of the titles and remove the common words
 function loopThru(callback){
+//while(y<4){
 while (y<titles.length){
-    title = removeWords(titles[y].ReviewCategoryTitle);
+    title = removeWords(titles[y].sessionTitle);
     addWords(title,(result)=>{
          y++;
          theStuff = result
     });
 };
+//console.log("LOOP THROUGH: ");
+//console.log(theStuff);
 callback(theStuff)
 }
 
-// function to add words to list
+// ADDWORDS: function to add words to list
 function addWords(title,callback){
 for (x=0;x<title.length;x++){
     theList.push(title[x]);
@@ -56,14 +59,13 @@ for (x=0;x<title.length;x++){
 callback(theList);
 }
 
-// function to sort
+// SORT: function to sort
 function sortEm(result, callback){
     result.sort();
     callback(result)
 }
 
 // function save them
-
 function saveEm(obj,callback){
     var file = './testdata.json'
     //var obj = {name: "Dave"};

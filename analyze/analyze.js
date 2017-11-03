@@ -2,9 +2,7 @@
 // Sorts Alpha order
 // Removes dupes
 
-
-var sessions = require('./ashData103017.json');
-var data = sessions.Sync.data.row;
+var data = require('./session_json_data.json'); // this is our data
 var theSessions = [];
 var title = "";
 var sessionId = "";
@@ -14,8 +12,12 @@ var i = 0;
 
 console.log(data.length+ ' records to check out');
 
+findKeywords(data,(notBlank)=>{
+    console.log('I found '+notBlank+ ' records with keywords');
+})
 
-sortem();
+
+//sortem();
 // getTitles((result)=>{
 //     //console.log(result);
 //     console.log(result.length+ ' records to deDupe');
@@ -91,4 +93,16 @@ function sortem (){
 
 }
 
+// function to check how many have keywords
+function findKeywords(data,callback){
+    var x = 0;
+    var notBlank = 0;
+    while (x<data.length){
+        if(data[x].keywords != ""){
+            notBlank++;
+        }
+        x++;
+}
 
+    callback(notBlank);
+}
