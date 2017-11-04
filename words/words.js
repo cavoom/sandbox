@@ -6,7 +6,7 @@
 
 var removeWords =  require('remove-words');
 var jsonfile = require('jsonfile');
-var everything = require('../analyze/session_updated.json');
+var everything = require('../combine/updatedSessions.json');
 var stringify = require('csv-stringify');
 
 var titles = everything;
@@ -67,7 +67,7 @@ function sortEm(result, callback){
 
 // function save them
 function saveEm(obj,callback){
-    var file = './testdata.json'
+    var file = './uniqueWords.json'
     //var obj = {name: "Dave"};
     jsonfile.writeFile(file, obj, function (err) {
         console.error(err)
