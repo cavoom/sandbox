@@ -1,11 +1,12 @@
-// This function combines first and lastd names, adds doctor
-// and remove middle initial
+// This function combines first and last names, adds doctor
+// and removes periods if there are any in the name
 // changes all to lower case
-// for some reason, t changes the original file as well
+// for some reason, it changes the original file as well
 // not sure why??
+// WE NEED to also add a routine that adds name without the middle initial
 
 var jsonfile = require('jsonfile');
-var originalData = require('../analyze/session_json_data.json');
+var originalData = require('./session_json_data.json');
 var newData = originalData;
 //console.log(newData.length);
 var i= 0;
@@ -27,11 +28,12 @@ function combineEm(callback){
     while(i < newData.length) {
         var theFirstName = newData[i].firstName;
         if(theFirstName.includes('.')){
-            newData[i].firstName = theFirstName.replace(/ .*./, ' '); // removes the middle initial
+            theFirstName = theFirstName.replace(/\./g, " "); // removes periods globally
+            newData[i].firstName = theFirstName;
             }
         fullName = "doctor " + newData[i].firstName + " " + newData[i].lastName;
         fullName = fullName.replace("  ", " "); // removes the double spaces
-        newData[i].combinedName = fullName.toLowerCase();
+        newData[i].combinedName = fullName.toLowerCase(); // makes it lower case
 
 
     i++;
@@ -43,7 +45,7 @@ function combineEm(callback){
 // ******************************************************************************
 function saveIt(newData, callback){
 
-    var file = './updatedSessions.json'
+    var file = './sessions.json'
     var obj = newData;
  
     jsonfile.writeFile(file, obj, {spaces: 2},function (err) {

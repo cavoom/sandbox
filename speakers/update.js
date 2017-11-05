@@ -54,9 +54,9 @@ function sortEm(result, callback){
 
 // function save them
 function saveEm(obj,callback){
-    var file = './sessions2.json'
+    var file = './sessions4.json'
     //var obj = {name: "Dave"};
-    jsonfile.writeFile(file, obj, function (err) {
+    jsonfile.writeFile(file, obj, {spaces: 2}, function (err) {
         console.error(err)
     })
     callback('done');

@@ -1,3 +1,4 @@
+// Create speakers list
 // this routine gets the speaker names
 // sorts them in alpha order
 // removes dupes
@@ -55,7 +56,7 @@ function sortEm(result, callback){
 }
 
 // function save them
-function saveEm(obj,callback){
+function saveEm(obj, callback){
     var file = './speakersList.json'
     //var obj = {name: "Dave"};
     jsonfile.writeFile(file, obj, function (err) {
