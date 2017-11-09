@@ -1,3 +1,5 @@
+// save a JSON file
+
 var sessions2 = require('./sessions2.json');
 var jsonfile = require('jsonfile');
 console.log('it is this length: ', sessions2.length);
@@ -14,7 +16,7 @@ console.log(sessions2[204]);
 function saveEm(obj,callback){
     var file = './sessions3.json'
     //var obj = {name: "Dave"};
-    jsonfile.writeFile(file, obj, function (err) {
+    jsonfile.writeFile(file, obj, {spaces: 2},function (err) {
         console.error(err)
     })
     callback('done');

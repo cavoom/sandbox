@@ -1,3 +1,5 @@
+// this routine saves to a file
+
 var sessionsList = require('./session_json_data.json');
 console.log(sessionsList.length);
 // var jsonfile = require('jsonFile'); // need to do this locally; alexa doesn't like file when manually move

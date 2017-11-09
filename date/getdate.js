@@ -6,34 +6,44 @@
 
 
 // CONVERT DATE STRING TO ZULU DATETIME
-let theDate="2017-10-25";
-let theStartTime = "2:00:00 PM";
-let theEndTime = "4:50:00 PM";
+// let theDate="2017-10-25";
+// let theStartTime = "2:00:00 PM";
+// let theEndTime = "4:50:00 PM";
 
-let theZulu = theDate+" "+theStartTime;
-let theZulu2 = theDate+" "+theEndTime;
-//console.log('zulu time: ',theZulu);
-var sessionStart = new Date(theZulu).toISOString();
-sessionStart = new Date(sessionStart);
-var sessionEnd = new Date(theZulu2).toISOString();
-sessionEnd = new Date(sessionEnd);
+// let theZulu = theDate+" "+theStartTime;
+// let theZulu2 = theDate+" "+theEndTime;
+// //console.log('zulu time: ',theZulu);
+// var sessionStart = new Date(theZulu).toISOString();
+// sessionStart = new Date(sessionStart);
+// var sessionEnd = new Date(theZulu2).toISOString();
+// sessionEnd = new Date(sessionEnd);
 
 
-// COMPARE THE CURRENT DATE TO SESSION START DATE
-let nowTime = new Date();
-console.log('now  : ', nowTime);
-// console.log('start: ', sessionStart);
-// console.log('ends : ', sessionEnd);
+// // COMPARE THE CURRENT DATE TO SESSION START DATE
+// let nowTime = new Date();
+// console.log('now  : ', nowTime);
+// // console.log('start: ', sessionStart);
+// // console.log('ends : ', sessionEnd);
 
-if(nowTime >= sessionStart && nowTime <= sessionEnd) {
+// if(nowTime >= sessionStart && nowTime <= sessionEnd) {
     
-    // loop through the json file and check each session
-    // create an array with the session found
-    console.log('you have a session going on');
-} else {
-    // do nothing
-    console.log('bummer, no sessions in play at this time')
-}
+//     // loop through the json file and check each session
+//     // create an array with the session found
+//     console.log('you have a session going on');
+// } else {
+//     // do nothing
+//     console.log('bummer, no sessions in play at this time')
+// }
+
+// CREATE THE SESSION START TIME FROM A ZULU VALUE (IF NEEDED)
+var theSessions = require('../combine/sessions.json');
+var startTime = theSessions[0].sessionStartTime;
+var theStart = new Date(startTime);
+var hours = theStart.getHours();
+var mins = theStart.getMinutes();
+var theTime = hours + ":"+ mins;
+console.log(theTime);
+
 
 
 
