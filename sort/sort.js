@@ -1,7 +1,7 @@
 // you can order these dates without converting them to dates
 // you can also sort objects
 // remove dupes
-
+console.log('starting SORT');
 var jsonfile = require('jsonfile');
 var stuff = require('../analyze/session_json_data.json');
 console.log(stuff.length+' records in the file');
@@ -25,7 +25,8 @@ function sortThem(stuff, callback){
 callback(stuff);
 }
 
-// Function to remove dupes
+// Function to remove dupes 
+// Checking Start Time and Checking Against Id
 function removeThem(resultz, callback){
     var uniques = [resultz[0]]; // first one is always unique, so just add manually
     var numberRecords = resultz.length;
@@ -33,7 +34,7 @@ function removeThem(resultz, callback){
     
     while (i < numberRecords){
         if(resultz[i].sessionStartTime != resultz[i-1].sessionStartTime ){
-            if(resultz[i].sessionTitle != resultz[i-1].sessionTitle){
+            if(resultz[i].sessionId != resultz[i-1].sessionId){
                 uniques.push(resultz[i]);
             } 
         }

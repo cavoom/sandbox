@@ -9,3 +9,14 @@ var obj = {name: "Dave"};
 jsonfile.writeFile(file, obj, function (err) {
   console.error(err)
 })
+
+// AS A FUNCTION
+// ***************************************************
+function saveEm(obj,callback){
+    var file = './sessions3.json'
+    //var obj = {name: "Dave"};
+    jsonfile.writeFile(file, obj, {spaces: 2},function (err) {
+        console.error(err)
+    })
+    callback('done');
+}
