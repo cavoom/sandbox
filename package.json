@@ -11,6 +11,7 @@
   "dependencies": {
     "jsonfile": "^4.0.0",
     "remove-words": "^0.2.0",
+    "string-similarity": "^1.2.0",
     "strip-common-words": "^0.1.1",
     "unique-random-array": "^1.0.0"
   }
