@@ -6,8 +6,9 @@
 // If nothing greater than 0.5, then say no matches found
 
 var stringSimilarity = require('string-similarity');
+var sampleSpeakers = require('./speakers.json');
 var speakers = require('../speakers/speakersList.json');
-var toMatch = "doctor ofrat katz";
+var toMatch = "doctor steve holland";
 
 // DETERMINE SIMILARITY IN TWO STRINGS
 //var similarity = stringSimilarity.compareTwoStrings('queso', 'kay so'); 
@@ -26,6 +27,9 @@ var toMatch = "doctor ofrat katz";
 
 
 // FIND BEST MATCH
+// var stringSimilarity = require('string-similarity');
+// var speakers = require('../speakers/speakersList.json');
+// var toMatch = "doctor ofrat katz";
 function bestMatch(toMatch, callback){
     var matches = stringSimilarity.findBestMatch(toMatch, speakers);
     var theBestMatch = "NoMatch";
